@@ -10,9 +10,9 @@ from dash import Input, Output, dcc, html
 from dash.dependencies import ALL, State
 
 
-ratings = pd.read_csv('./ml-1m/ratings.dat', sep='::', engine = 'python', header=None)
+ratings = pd.read_csv('./ratings.dat', sep='::', engine = 'python', header=None)
 ratings.columns = ['UserID', 'MovieID', 'Rating', 'Timestamp']
-movies = pd.read_csv('./ml-1m/movies.dat', sep='::', engine = 'python', encoding="ISO-8859-1", header = None)
+movies = pd.read_csv('./movies.dat', sep='::', engine = 'python', encoding="ISO-8859-1", header = None)
 movies.columns = ['MovieID', 'Title', 'Genres']
 
 multiple_idx = pd.Series([("|" in movie) for movie in movies['Genres']])
