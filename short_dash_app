@@ -9,10 +9,10 @@ import dash_bootstrap_components as dbc
 from dash import Input, Output, dcc, html
 from dash.dependencies import ALL, State
 
-loc='/Users/keliangxiao/Library/CloudStorage/OneDrive-UniversityofIllinois-Urbana/Field courses/STAT/STAT542/Project 4/ml-1m/'
-ratings = pd.read_csv(loc+'ratings.dat', sep='::', engine = 'python', header=None)
+
+ratings = pd.read_csv('https://github.com/kelleyxiao/Stat542-Project4/blob/main/ratings.dat', sep='::', engine = 'python', header=None)
 ratings.columns = ['UserID', 'MovieID', 'Rating', 'Timestamp']
-movies = pd.read_csv(loc+'movies.dat', sep='::', engine = 'python',
+movies = pd.read_csv('https://github.com/kelleyxiao/Stat542-Project4/blob/main/movies.dat', sep='::', engine = 'python',
                      encoding="ISO-8859-1", header = None)
 movies.columns = ['MovieID', 'Title', 'Genres']
 
@@ -44,9 +44,9 @@ def top_movies_in_genre(df, genre, min_reviews=10):
     return top_movies_with_title
 
 # System II
-ratings_df = pd.read_csv('/Users/keliangxiao/Library/CloudStorage/OneDrive-UniversityofIllinois-Urbana/Field courses/STAT/STAT542/Project 4/ratings_df.csv')
+ratings_df = pd.read_csv('https://github.com/kelleyxiao/Stat542-Project4/blob/main/ratings_df.csv')
 
-pruned_similarity_matrix = np.load('/Users/keliangxiao/Library/CloudStorage/OneDrive-UniversityofIllinois-Urbana/Field courses/STAT/STAT542/Project 4/pruned_similarity_matrix_short.npy')
+pruned_similarity_matrix = np.load('https://github.com/kelleyxiao/Stat542-Project4/blob/main/pruned_similarity_matrix_short.npy')
 
 # Function definition
 def myIBCF(newuser, pruned_similarity_matrix, ratings_df):
